@@ -1,6 +1,6 @@
 import { useAppContext } from '../context/AppContext';
 import StoryList from './StoryList';
-import { X } from 'lucide-react';
+import { X, Book } from 'lucide-react';
 
 export default function MobileMenu() {
   const { mobileMenuOpen, setMobileMenuOpen } = useAppContext();
@@ -19,11 +19,14 @@ export default function MobileMenu() {
       
       {/* Menu */}
       <aside className="fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-lg z-50 flex flex-col">
-        <div className="flex items-center justify-between p-4 border-b">
-          <h2 className="font-bold">Stories</h2>
+        <div className="flex items-center p-4 border-b">
+          <div className="flex items-center space-x-2">
+            <Book size={24} />
+            <h1 className="text-xl font-bold">Furi-Tales</h1>
+          </div>
           <button 
             onClick={() => setMobileMenuOpen(false)}
-            className="p-1 rounded text-gray-600 hover:bg-gray-200"
+            className="ml-auto p-1 rounded text-gray-600 hover:bg-gray-200"
             aria-label="Close menu"
           >
             <X size={24} />
